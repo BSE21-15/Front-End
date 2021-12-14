@@ -26,6 +26,7 @@ import MDButton from "components/MDButton";
 import CoverLayout from "layouts/authentication/components/CoverLayout";
 
 // Images
+// eslint-disable-next-line import/no-unresolved
 import bgImage from "assets/images/bg-reset-cover.jpeg";
 
 function Cover() {

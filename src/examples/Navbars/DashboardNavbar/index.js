@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
 =========================================================
 * Material Dashboard 2 React - v2.0.0
@@ -12,6 +13,11 @@ Coded by www.creative-tim.com
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 import { useState, useEffect } from "react";
 
@@ -55,6 +61,7 @@ import {
 
 function DashboardNavbar({ absolute, light, isMini }) {
   const [navbarType, setNavbarType] = useState();
+  const [subject, setSubject] = useState('');
   const [controller, dispatch] = useMaterialUIController();
   const { miniSidenav, transparentNavbar, fixedNavbar, openConfigurator, darkMode } = controller;
   const [openMenu, setOpenMenu] = useState(false);
@@ -90,6 +97,9 @@ function DashboardNavbar({ absolute, light, isMini }) {
   const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
   const handleOpenMenu = (event) => setOpenMenu(event.currentTarget);
   const handleCloseMenu = () => setOpenMenu(false);
+  const handleChange = (event) => {
+    setSubject(event.target.value);
+  };
 
   // Render the notifications menu
   const renderMenu = () => (
@@ -133,11 +143,33 @@ function DashboardNavbar({ absolute, light, isMini }) {
         <MDBox color="inherit" mb={{ xs: 1, md: 0 }} sx={(theme) => navbarRow(theme, { isMini })}>
           <Breadcrumbs icon="home" title={route[route.length - 1]} route={route} light={light} />
         </MDBox>
+        <Box sx={{ minWidth: 200}}>
+              <FormControl fullWidth>
+                <InputLabel id="demo-simple-select-label">Subject</InputLabel>
+                <Select sx={{ padding: '15px'}}                
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={subject}
+                  label="Subject"
+                  onChange={handleChange}
+                  
+                >
+                  <MenuItem value={1}>Mathematics</MenuItem>
+                  <MenuItem value={2}>English</MenuItem>
+                  <MenuItem value={3}>Chemistry</MenuItem>
+                  <MenuItem value={4}>Physics</MenuItem>
+                  <MenuItem value={5}>Biology</MenuItem>
+                  <MenuItem value={6}>Geography</MenuItem>
+                  <MenuItem value={7}>History</MenuItem>
+                  <MenuItem value={8}>Commerce</MenuItem>
+                  <MenuItem value={9}>CRE</MenuItem>
+                  <MenuItem value={10}>Agriculture</MenuItem>
+                </Select>
+              </FormControl>
+          </Box>
         {isMini ? null : (
           <MDBox sx={(theme) => navbarRow(theme, { isMini })}>
-            <MDBox pr={1}>
-              <MDInput label="Search here" />
-            </MDBox>
+            
             <MDBox color={light ? "white" : "inherit"}>
               <Link to="/authentication/sign-in/basic">
                 <IconButton sx={navbarIconButton} size="small" disableRipple>
