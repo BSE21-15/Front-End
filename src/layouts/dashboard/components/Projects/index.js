@@ -3,11 +3,6 @@
 * Soft UI Dashboard React - v3.0.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
  =========================================================
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
@@ -53,9 +48,10 @@ function Projects() {
       open={Boolean(menu)}
       onClose={closeMenu}
     >
-      <MenuItem onClick={closeMenu}>Action</MenuItem>
-      <MenuItem onClick={closeMenu}>Another action</MenuItem>
-      <MenuItem onClick={closeMenu}>Something else</MenuItem>
+      <MenuItem onClick={closeMenu}>Only D1-D2</MenuItem>
+      <MenuItem onClick={closeMenu}>Only C3-C6</MenuItem>
+      <MenuItem onClick={closeMenu}>Only P7-P8</MenuItem>
+      <MenuItem onClick={closeMenu}>Only F9</MenuItem>
     </Menu>
   );
 

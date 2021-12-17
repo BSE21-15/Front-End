@@ -2,12 +2,6 @@
 =========================================================
 * Material Dashboard 2 React - v2.0.0
 =========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
  =========================================================
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
@@ -99,10 +93,10 @@ function Header({ children }) {
           <Grid item>
             <MDBox height="100%" mt={0.5} lineHeight={1}>
               <MDTypography variant="h5" fontWeight="medium">
-                Richard Davis
+                Richard Bwoji
               </MDTypography>
               <MDTypography variant="button" color="text" fontWeight="regular">
-                CEO / Co-Founder
+                Department of Mathematics
               </MDTypography>
             </MDBox>
           </Grid>
@@ -110,7 +104,7 @@ function Header({ children }) {
             <AppBar position="static">
               <Tabs orientation={tabsOrientation} value={tabValue} onChange={handleSetTabValue}>
                 <Tab
-                  label="App"
+                  label="Marks"
                   icon={
                     <Icon fontSize="small" sx={{ mt: -0.25 }}>
                       home
@@ -118,7 +112,7 @@ function Header({ children }) {
                   }
                 />
                 <Tab
-                  label="Message"
+                  label="Messages"
                   icon={
                     <Icon fontSize="small" sx={{ mt: -0.25 }}>
                       email

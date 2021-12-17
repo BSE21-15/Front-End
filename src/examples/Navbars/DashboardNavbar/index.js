@@ -4,10 +4,6 @@
 * Material Dashboard 2 React - v2.0.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
 
  =========================================================
 
@@ -115,8 +111,8 @@ function DashboardNavbar({ absolute, light, isMini }) {
       sx={{ mt: 2 }}
     >
       <NotificationItem icon={<Icon>email</Icon>} title="Check new messages" />
-      <NotificationItem icon={<Icon>podcasts</Icon>} title="Manage Podcast sessions" />
-      <NotificationItem icon={<Icon>shopping_cart</Icon>} title="Payment successfully completed" />
+      <NotificationItem icon={<Icon>email</Icon>} title="Manage marks updates" />
+      <NotificationItem icon={<Icon>email</Icon>} title="Upload successfully completed" />
     </Menu>
   );
 

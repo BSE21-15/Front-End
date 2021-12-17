@@ -2,13 +2,7 @@
 =========================================================
 * Material Dashboard 2 React - v2.0.0
 =========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
+=========================================================
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
@@ -22,7 +16,7 @@ import MDBox from "components/MDBox";
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Footer from "examples/Footer";
+// import Footer from "examples/Footer";
 import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
 import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
 import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatisticsCard";
@@ -93,7 +87,7 @@ function Dashboard() {
               <MDBox mb={6}>
                 <ReportsBarChart
                   color="info"
-                  title="Grade Projections"
+                  title="individual Grade Projections"
                   description="Bar chart showing number of students in each grade"
                   chart={reportsBarChartData}
                 />
@@ -103,7 +97,7 @@ function Dashboard() {
               <MDBox mb={6}>
                 <ReportsLineChart
                   color="success"
-                  title="Grade Projections"
+                  title="Monthly Grade Projections"
                   description="Line chart showing number of students in each grade"
                   chart={sales}
                 />
@@ -123,7 +117,6 @@ function Dashboard() {
           </Grid>
         </MDBox>
       </MDBox>
-      <Footer />
     </DashboardLayout>
   );
 }

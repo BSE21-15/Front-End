@@ -2,12 +2,6 @@
 =========================================================
 * Material Dashboard 2 React - v2.0.0
 =========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
  =========================================================
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
@@ -29,7 +23,7 @@ import MDTypography from "components/MDTypography";
 import typography from "assets/theme/base/typography";
 
 function Footer({ light }) {
-  const { size } = typography;
+   const { size } = typography;
 
   return (
     <MDBox position="absolute" width="100%" bottom={0} py={4}>
@@ -50,19 +44,13 @@ function Footer({ light }) {
             color={light ? "white" : "text"}
             fontSize={size.sm}
           >
-            &copy; {new Date().getFullYear()}, made with
+            &copy; {new Date().getFullYear()},
             <MDBox fontSize={size.md} color={light ? "white" : "dark"} mb={-0.5} mx={0.25}>
               <Icon color="inherit" fontSize="inherit">
                 favorite
               </Icon>
             </MDBox>
             by
-            <Link href="https://www.creative-tim.com/" target="_blank">
-              <MDTypography variant="button" fontWeight="medium" color={light ? "white" : "dark"}>
-                &nbsp;Creative Tim&nbsp;
-              </MDTypography>
-            </Link>
-            for a better web.
           </MDBox>
           <MDBox
             component="ul"
@@ -88,40 +76,7 @@ function Footer({ light }) {
                   fontWeight="regular"
                   color={light ? "white" : "dark"}
                 >
-                  Creative Tim
-                </MDTypography>
-              </Link>
-            </MDBox>
-            <MDBox component="li" px={2} lineHeight={1}>
-              <Link href="https://www.creative-tim.com/presentation" target="_blank">
-                <MDTypography
-                  variant="button"
-                  fontWeight="regular"
-                  color={light ? "white" : "dark"}
-                >
-                  About Us
-                </MDTypography>
-              </Link>
-            </MDBox>
-            <MDBox component="li" px={2} lineHeight={1}>
-              <Link href="https://www.creative-tim.com/blog" target="_blank">
-                <MDTypography
-                  variant="button"
-                  fontWeight="regular"
-                  color={light ? "white" : "dark"}
-                >
-                  Blog
-                </MDTypography>
-              </Link>
-            </MDBox>
-            <MDBox component="li" pl={2} lineHeight={1}>
-              <Link href="https://www.creative-tim.com/license" target="_blank">
-                <MDTypography
-                  variant="button"
-                  fontWeight="regular"
-                  color={light ? "white" : "dark"}
-                >
-                  License
+                  BSE21-15
                 </MDTypography>
               </Link>
             </MDBox>
@@ -131,7 +86,6 @@ function Footer({ light }) {
     </MDBox>
   );
 }
-
 // Setting default props for the Footer
 Footer.defaultProps = {
   light: false,
@@ -142,4 +96,5 @@ Footer.propTypes = {
   light: PropTypes.bool,
 };
 
-export default Footer;
+
+ export default Footer;

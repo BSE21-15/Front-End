@@ -2,12 +2,6 @@
 =========================================================
 * Material Dashboard 2 React - v2.0.0
 =========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
  =========================================================
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
@@ -29,7 +23,7 @@ import MDSnackbar from "components/MDSnackbar";
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Footer from "examples/Footer";
+// import Footer from "examples/Footer";
 
 function Notifications() {
   const [successSB, setSuccessSB] = useState(false);
@@ -121,9 +115,6 @@ function Notifications() {
                 <MDTypography variant="h5">Alerts</MDTypography>
               </MDBox>
               <MDBox pt={2} px={2}>
-                <MDAlert color="primary" dismissible>
-                  {alertContent("primary")}
-                </MDAlert>
                 <MDAlert color="secondary" dismissible>
                   {alertContent("secondary")}
                 </MDAlert>
@@ -139,12 +130,6 @@ function Notifications() {
                 <MDAlert color="info" dismissible>
                   {alertContent("info")}
                 </MDAlert>
-                <MDAlert color="light" dismissible>
-                  {alertContent("light")}
-                </MDAlert>
-                <MDAlert color="dark" dismissible>
-                  {alertContent("dark")}
-                </MDAlert>
               </MDBox>
             </Card>
           </Grid>
@@ -154,7 +139,7 @@ function Notifications() {
               <MDBox p={2} lineHeight={0}>
                 <MDTypography variant="h5">Notifications</MDTypography>
                 <MDTypography variant="button" color="text" fontWeight="regular">
-                  Notifications on this page use Toasts from Bootstrap. Read more details here.
+                  Notifications on this page use Toasts.
                 </MDTypography>
               </MDBox>
               <MDBox p={2}>
@@ -189,7 +174,6 @@ function Notifications() {
           </Grid>
         </Grid>
       </MDBox>
-      <Footer />
     </DashboardLayout>
   );
 }

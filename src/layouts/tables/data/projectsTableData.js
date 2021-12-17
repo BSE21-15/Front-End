@@ -38,7 +38,7 @@ export default function data() {
     </MDBox>
   );
 
-  return {
+      return {
     columns: [
       { Header: "project", accessor: "project", width: "30%", align: "left" },
       { Header: "budget", accessor: "budget", align: "left" },

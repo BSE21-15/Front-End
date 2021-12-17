@@ -3,11 +3,6 @@
 * Material Dashboard 2 React - v2.0.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
  =========================================================
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
@@ -28,7 +23,7 @@ import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import PageLayout from "examples/LayoutContainers/PageLayout";
 
 // Authentication layout components
-import Footer from "layouts/authentication/components/Footer";
+// import Footer from "layouts/authentication/components/Footer";
 
 function CoverLayout({ coverHeight, image, children }) {
   return (
@@ -37,7 +32,7 @@ function CoverLayout({ coverHeight, image, children }) {
         action={{
           type: "external",
           route: "https://creative-tim.com/product/material-dashboard-react",
-          label: "free download",
+          label: "join now",
         }}
         transparent
         light
@@ -69,7 +64,6 @@ function CoverLayout({ coverHeight, image, children }) {
           </Grid>
         </Grid>
       </MDBox>
-      <Footer />
     </PageLayout>
   );
 }

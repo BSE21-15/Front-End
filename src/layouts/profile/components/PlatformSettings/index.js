@@ -3,11 +3,6 @@
 * Material Dashboard 2 React - v2.0.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
  =========================================================
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
@@ -48,7 +43,7 @@ function PlatformSettings() {
           </MDBox>
           <MDBox width="80%" ml={0.5}>
             <MDTypography variant="button" fontWeight="regular" color="text">
-              Email me when someone follows me
+              Email me when someone uploads new marks.
             </MDTypography>
           </MDBox>
         </MDBox>
@@ -58,7 +53,7 @@ function PlatformSettings() {
           </MDBox>
           <MDBox width="80%" ml={0.5}>
             <MDTypography variant="button" fontWeight="regular" color="text">
-              Email me when someone answers on my post
+              Email me when someone updates other subjects.
             </MDTypography>
           </MDBox>
         </MDBox>
@@ -68,7 +63,7 @@ function PlatformSettings() {
           </MDBox>
           <MDBox width="80%" ml={0.5}>
             <MDTypography variant="button" fontWeight="regular" color="text">
-              Email me when someone mentions me
+              Email me when someone deletes marks.
             </MDTypography>
           </MDBox>
         </MDBox>
@@ -83,7 +78,7 @@ function PlatformSettings() {
           </MDBox>
           <MDBox width="80%" ml={0.5}>
             <MDTypography variant="button" fontWeight="regular" color="text">
-              New launches and projects
+              New uploads
             </MDTypography>
           </MDBox>
         </MDBox>
@@ -93,7 +88,7 @@ function PlatformSettings() {
           </MDBox>
           <MDBox width="80%" ml={0.5}>
             <MDTypography variant="button" fontWeight="regular" color="text">
-              Monthly product updates
+              Deleted Marks
             </MDTypography>
           </MDBox>
         </MDBox>
@@ -103,7 +98,7 @@ function PlatformSettings() {
           </MDBox>
           <MDBox width="80%" ml={0.5}>
             <MDTypography variant="button" fontWeight="regular" color="text">
-              Subscribe to newsletter
+              View recent marks
             </MDTypography>
           </MDBox>
         </MDBox>
