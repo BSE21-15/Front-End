@@ -9,7 +9,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // react-router-dom components
 import { useLocation, NavLink } from "react-router-dom";
@@ -27,6 +27,7 @@ import Icon from "@mui/material/Icon";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
+import MDInput from "components/MDInput";
 
 // Material Dashboard 2 React example components
 import SidenavCollapse from "examples/Sidenav/SidenavCollapse";
@@ -34,6 +35,8 @@ import SidenavCollapse from "examples/Sidenav/SidenavCollapse";
 // Custom styles for the Sidenav
 import SidenavRoot from "examples/Sidenav/SidenavRoot";
 import sidenavLogoLabel from "examples/Sidenav/styles/sidenav";
+
+import axios from 'axios';
 
 // Material Dashboard 2 PRO React context
 import {
@@ -58,6 +61,38 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
   }
 
   const closeSidenav = () => setMiniSidenav(dispatch, true);
+  const [fileState, setfileState] = useState(null);
+
+  const handleFile = (e) => {
+    const file = e.target.files[0];
+    setfileState(file); 
+  }
+
+  const handleFileUpload = (e) => {    
+    const file = fileState;    
+
+    
+    // eslint-disable-next-line prefer-const    
+    let formData = new FormData();
+    console.log(file)
+    
+    formData.append('file', file)
+    
+    console.log([...formData]);
+    axios.post('http://markspredictorapi.herokuapp.com/file/', formData, {
+      
+      headers: {        
+        'content-type': 'multipart/form-data'
+        
+      },    
+  })
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((error) => {
+    console.log(error.response);
+  }); 
+}
 
   useEffect(() => {
     // A function that sets the mini state of the sidenav.
@@ -175,6 +210,19 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
         }
       />
       <List>{renderRoutes}</List>
+      <MDBox p={2} mt="auto">
+        <MDButton variant="gradient" color="info" onChange={handleFile} fullWidth>
+                <MDInput type="file" label="Select File" variant="standard" fullWidth />
+        </MDButton>
+      </MDBox>
+      <MDBox p={2} mt="auto">
+        <MDButton variant="gradient" color="info" onClick={handleFileUpload} fullWidth>
+                upload file
+        </MDButton>
+      </MDBox>
+
+
+
       <MDBox p={2} mt="auto">
         <MDButton
           component="a"
