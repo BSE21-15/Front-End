@@ -9,6 +9,7 @@
 
 // @mui material components
 import Grid from "@mui/material/Grid";
+import { useState, useEffect } from "react";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
@@ -29,8 +30,50 @@ import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
 import Projects from "layouts/dashboard/components/Projects";
 import OrdersOverview from "layouts/dashboard/components/OrdersOverview";
 
+
+const marksPerGrade = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+
 function Dashboard() {
   const { sales } = reportsLineChartData;
+  const [subject, setSubject] = useState('');
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(
+        "https://markspredictorapi.herokuapp.com/prediction/"
+      );
+      const jsondata = await response.json()
+      const newArray = [...jsondata];
+      console.log(newArray)
+          
+      newArray.map((item) => {
+        const currentSubject = item.subject;
+        const prediction = item.prediction;
+      
+        if (currentSubject === "Mathematics" || (prediction >= 95)) {
+          marksPerGrade[0] += 1;
+        } else if (currentSubject === "Mathematics" || (prediction >= 90)) {
+          marksPerGrade[1] += 1;
+        } else if (currentSubject === "Mathematics" || (prediction >= 80)) {
+          marksPerGrade[2] += 1;
+        } else if (currentSubject === "Mathematics" || (prediction >= 70)) {
+          marksPerGrade[3] += 1;
+        } else if (currentSubject === "Mathematics" || (prediction >= 66)) {
+          marksPerGrade[4] += 1;
+        } else if (currentSubject === "Mathematics" || (prediction >= 60)) {
+          marksPerGrade[5] += 1;
+        } else if (currentSubject === "Mathematics" || (prediction >= 56)) {
+          marksPerGrade[6] += 1;
+        } else if (currentSubject === "Mathematics" || (prediction >= 50)) {
+          marksPerGrade[7] += 1;
+        } else {
+          marksPerGrade[8] += 1;
+        }
+      });
+      console.log(marksPerGrade);
+    }
+    fetchData()
+  }, []);
 
   return (
     <DashboardLayout>
