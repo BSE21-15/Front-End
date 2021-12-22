@@ -34,9 +34,9 @@ import OrdersOverview from "layouts/dashboard/components/OrdersOverview";
 const marksPerGrade = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 function Dashboard() {
-  const { sales } = reportsLineChartData;
+  
   const [subject, setSubject] = useState('');
-
+  const [marks, setMarks] = useState([]);
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
@@ -71,9 +71,12 @@ function Dashboard() {
         }
       });
       console.log(marksPerGrade);
+      setMarks(marksPerGrade)
     }
     fetchData()
   }, []);
+
+  const { sales } = reportsLineChartData;
 
   return (
     <DashboardLayout>
@@ -132,7 +135,10 @@ function Dashboard() {
                   color="info"
                   title="individual Grade Projections"
                   description="Bar chart showing number of students in each grade"
-                  chart={reportsBarChartData}
+                  chart={{
+                    labels: ["D1", "D2", "C3", "C4", "C5", "C6", "P7","P8","F9"],
+                    datasets: { label: "No of Students", data: marks },
+                  }}
                 />
               </MDBox>
             </Grid>
@@ -165,3 +171,4 @@ function Dashboard() {
 }
 
 export default Dashboard;
+
