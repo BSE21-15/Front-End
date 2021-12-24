@@ -72,21 +72,21 @@ function Dashboard() {
         const currentSubject = item.subject;
         const prediction = item.prediction;
       
-        if (currentSubject === finalSubject && (prediction >= 95)) {
+        if (currentSubject === finalSubject && (prediction >= 90)) {
           marksPerGrade[0] += 1;
-        } else if (currentSubject === finalSubject && (prediction >= 90)) {
-          marksPerGrade[1] += 1;
         } else if (currentSubject === finalSubject && (prediction >= 80)) {
+          marksPerGrade[1] += 1;
+        } else if (currentSubject === finalSubject && (prediction >= 75)) {
           marksPerGrade[2] += 1;
         } else if (currentSubject === finalSubject && (prediction >= 70)) {
           marksPerGrade[3] += 1;
-        } else if (currentSubject === finalSubject && (prediction >= 66)) {
+        } else if (currentSubject === finalSubject && (prediction >= 65)) {
           marksPerGrade[4] += 1;
         } else if (currentSubject === finalSubject && (prediction >= 60)) {
           marksPerGrade[5] += 1;
-        } else if (currentSubject === finalSubject && (prediction >= 56)) {
+        } else if (currentSubject === finalSubject && (prediction >= 40)) {
           marksPerGrade[6] += 1;
-        } else if (currentSubject === finalSubject && (prediction >= 50)) {
+        } else if (currentSubject === finalSubject && (prediction >= 20)) {
           marksPerGrade[7] += 1;
         }else if (currentSubject === finalSubject && (prediction >= 0)) {
           marksPerGrade[8] += 1;
