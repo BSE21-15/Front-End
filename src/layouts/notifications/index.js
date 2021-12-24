@@ -7,7 +7,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // @mui material components
 import Grid from "@mui/material/Grid";
@@ -26,6 +26,8 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 // import Footer from "examples/Footer";
 
 function Notifications() {
+
+  const [finalSubject, setFinalSubject] = useState("Mathematics");
   const [successSB, setSuccessSB] = useState(false);
   const [infoSB, setInfoSB] = useState(false);
   const [warningSB, setWarningSB] = useState(false);
@@ -106,7 +108,7 @@ function Notifications() {
 
   return (
     <DashboardLayout>
-      <DashboardNavbar />
+      <DashboardNavbar setFinalSubject={setFinalSubject}/>
       <MDBox mt={6} mb={3}>
         <Grid container spacing={3} justifyContent="center">
           <Grid item xs={12} lg={8}>

@@ -55,13 +55,21 @@ import {
   setOpenConfigurator,
 } from "context";
 
-function DashboardNavbar({ absolute, light, isMini }) {
+function DashboardNavbar({ absolute, light, isMini, setFinalSubject  }) {
   const [navbarType, setNavbarType] = useState();
-  const [subject, setSubject] = useState('');
+  const [subject, setSubject] = useState('Mathematics');  
   const [controller, dispatch] = useMaterialUIController();
   const { miniSidenav, transparentNavbar, fixedNavbar, openConfigurator, darkMode } = controller;
   const [openMenu, setOpenMenu] = useState(false);
   const route = useLocation().pathname.split("/").slice(1);
+
+  console.log(subject);
+  setFinalSubject(subject);
+
+  const handleChange = (event) => {
+    setSubject(event.target.value);    
+    
+  };
 
   useEffect(() => {
     // Setting the navbar type
@@ -70,6 +78,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
     } else {
       setNavbarType("static");
     }
+    
 
     // A function that sets the transparent state of the navbar.
     function handleTransparentNavbar() {
@@ -87,15 +96,14 @@ function DashboardNavbar({ absolute, light, isMini }) {
 
     // Remove event listener on cleanup
     return () => window.removeEventListener("scroll", handleTransparentNavbar);
-  }, [dispatch, fixedNavbar]);
+  }, [dispatch, fixedNavbar, subject]);
 
   const handleMiniSidenav = () => setMiniSidenav(dispatch, !miniSidenav);
   const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
   const handleOpenMenu = (event) => setOpenMenu(event.currentTarget);
   const handleCloseMenu = () => setOpenMenu(false);
-  const handleChange = (event) => {
-    setSubject(event.target.value);
-  };
+  
+  
 
   // Render the notifications menu
   const renderMenu = () => (
@@ -150,16 +158,18 @@ function DashboardNavbar({ absolute, light, isMini }) {
                   onChange={handleChange}
                   
                 >
-                  <MenuItem value={1}>Mathematics</MenuItem>
-                  <MenuItem value={2}>English</MenuItem>
-                  <MenuItem value={3}>Chemistry</MenuItem>
-                  <MenuItem value={4}>Physics</MenuItem>
-                  <MenuItem value={5}>Biology</MenuItem>
-                  <MenuItem value={6}>Geography</MenuItem>
-                  <MenuItem value={7}>History</MenuItem>
-                  <MenuItem value={8}>Commerce</MenuItem>
-                  <MenuItem value={9}>CRE</MenuItem>
-                  <MenuItem value={10}>Agriculture</MenuItem>
+                  <MenuItem default value="Mathematics.csv">Mathematics</MenuItem>
+                  <MenuItem value="English.csv">English</MenuItem>
+                  <MenuItem value="Chemistry.csv">Chemistry</MenuItem>
+                  <MenuItem value="Physics.csv">Physics</MenuItem>
+                  <MenuItem value="Biology.csv">Biology</MenuItem>
+                  <MenuItem value="Geography.csv">Geography</MenuItem>
+                  <MenuItem value="History.csv">History</MenuItem>
+                  <MenuItem value="Commerce.csv">Commerce</MenuItem>
+                  <MenuItem value="CRE.csv">CRE</MenuItem>
+                  <MenuItem value="Agriculture.csv">Agriculture</MenuItem>                  
+                  <MenuItem value="Biology-testone.csv">Biology-testone.csv</MenuItem>
+                  
                 </Select>
               </FormControl>
           </Box>

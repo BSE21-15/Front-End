@@ -28,15 +28,34 @@ import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
 
 // Dashboard components
 import Projects from "layouts/dashboard/components/Projects";
+import BasicTable from "examples/Tables/DataTable/BasicTable"
 import OrdersOverview from "layouts/dashboard/components/OrdersOverview";
 
 
-const marksPerGrade = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+
 
 function Dashboard() {
   
-  const [subject, setSubject] = useState('');
+  const [finalSubject, setFinalSubject] = useState("Mathematics");
   const [marks, setMarks] = useState([]);
+
+  const [distinctions, setDistinctions] = useState(0);
+  const [credits, setCredits] = useState(0);
+  const [passes, setPasses] = useState(0);
+  const [fails, setFails] = useState(0);
+
+  const [d1, setD1] = useState(0);
+  const [d2, setD2] = useState(0);
+  const [c3, setC3] = useState(0);
+  const [c4, setC4] = useState(0);
+  const [c5, setC5] = useState(0);
+  const [c6, setC6] = useState(0);
+  const [p7, setP7] = useState(0);
+  const [p8, setP8] = useState(0);
+  const [f9, setF9] = useState(0);
+
+
+
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
@@ -45,72 +64,73 @@ function Dashboard() {
       const jsondata = await response.json()
       const newArray = [...jsondata];
       console.log(newArray)
+      console.log(finalSubject)
+
+      const marksPerGrade = [0, 0, 0, 0, 0, 0, 0, 0, 0];
           
       newArray.map((item) => {
         const currentSubject = item.subject;
         const prediction = item.prediction;
       
-        if (currentSubject === "Mathematics" || (prediction >= 95)) {
+        if (currentSubject === finalSubject && (prediction >= 95)) {
           marksPerGrade[0] += 1;
-        } else if (currentSubject === "Mathematics" || (prediction >= 90)) {
+        } else if (currentSubject === finalSubject && (prediction >= 90)) {
           marksPerGrade[1] += 1;
-        } else if (currentSubject === "Mathematics" || (prediction >= 80)) {
+        } else if (currentSubject === finalSubject && (prediction >= 80)) {
           marksPerGrade[2] += 1;
-        } else if (currentSubject === "Mathematics" || (prediction >= 70)) {
+        } else if (currentSubject === finalSubject && (prediction >= 70)) {
           marksPerGrade[3] += 1;
-        } else if (currentSubject === "Mathematics" || (prediction >= 66)) {
+        } else if (currentSubject === finalSubject && (prediction >= 66)) {
           marksPerGrade[4] += 1;
-        } else if (currentSubject === "Mathematics" || (prediction >= 60)) {
+        } else if (currentSubject === finalSubject && (prediction >= 60)) {
           marksPerGrade[5] += 1;
-        } else if (currentSubject === "Mathematics" || (prediction >= 56)) {
+        } else if (currentSubject === finalSubject && (prediction >= 56)) {
           marksPerGrade[6] += 1;
-        } else if (currentSubject === "Mathematics" || (prediction >= 50)) {
+        } else if (currentSubject === finalSubject && (prediction >= 50)) {
           marksPerGrade[7] += 1;
-        } else {
+        }else if (currentSubject === finalSubject && (prediction >= 0)) {
           marksPerGrade[8] += 1;
+        } else {
+          return
         }
       });
       console.log(marksPerGrade);
-      setMarks(marksPerGrade)
+      setMarks(marksPerGrade);
+
+      // Setting data for the statistics cards
+      setDistinctions(marksPerGrade[0]+marksPerGrade[1]); 
+      setCredits(marksPerGrade[2] + marksPerGrade[3] + marksPerGrade[4] + marksPerGrade[5]);
+      setPasses(marksPerGrade[6] + marksPerGrade[7]);
+      setFails(marksPerGrade[8]);
+
+      // Setting data for propotion of students in each grade
+      setD1(marksPerGrade[0]);
+      setD2(marksPerGrade[1]);
+      setC3(marksPerGrade[2]);
+      setC4(marksPerGrade[3]);
+      setC5(marksPerGrade[4]);
+      setC6(marksPerGrade[5]);
+      setP7(marksPerGrade[6]);
+      setP8(marksPerGrade[7]);
+      setF9(marksPerGrade[8]);    
     }
     fetchData()
-  }, []);
+  }, [finalSubject]);
 
   const { sales } = reportsLineChartData;
 
   return (
     <DashboardLayout>
-      <DashboardNavbar />
+      <DashboardNavbar setFinalSubject={setFinalSubject}/>
       <MDBox py={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
-                color="dark"
-                icon="weekend"
-                title="Distinctions"
-                count={151}
-                
-              />
-            </MDBox>
-          </Grid>
-          <Grid item xs={12} md={6} lg={3}>
-            <MDBox mb={1.5}>
-              <ComplexStatisticsCard
-                icon="leaderboard"
-                title="Credits"
-                count={400}
-                
-              />
-            </MDBox>
-          </Grid>
-          <Grid item xs={12} md={6} lg={3}>
-            <MDBox mb={1.5}>
-              <ComplexStatisticsCard
                 color="success"
-                icon="store"
-                title="Pass"
-                count={60}
+                icon="person_add"
+                title="Distinctions"
+                count={distinctions}
                 
               />
             </MDBox>
@@ -118,10 +138,32 @@ function Dashboard() {
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
-                color="primary"
+                color="info"
+                icon="person_add"
+                title="Credits"
+                count={credits}
+                
+              />
+            </MDBox>
+          </Grid>
+          <Grid item xs={12} md={6} lg={3}>
+            <MDBox mb={1.5}>
+              <ComplexStatisticsCard
+                color="warning"
+                icon="person_add"
+                title="Pass"
+                count={passes}
+                
+              />
+            </MDBox>
+          </Grid>
+          <Grid item xs={12} md={6} lg={3}>
+            <MDBox mb={1.5}>
+              <ComplexStatisticsCard
+                color="error"
                 icon="person_add"
                 title="Failure"
-                count={15}
+                count={fails}
                 
               />
             </MDBox>
@@ -148,7 +190,10 @@ function Dashboard() {
                   color="success"
                   title="Monthly Grade Projections"
                   description="Line chart showing number of students in each grade"
-                  chart={sales}
+                  chart={{
+                    labels: ["D1", "D2", "C3", "C4", "C5", "C6", "P7","P8","F9"],
+                    datasets: { label: "No of Students", data: marks },
+                  }}
                 />
               </MDBox>
             </Grid>
@@ -158,7 +203,18 @@ function Dashboard() {
         <MDBox>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6} lg={8}>
-              <Projects />
+              <BasicTable
+                  d1={d1}
+                  d2={d2}
+                  c3={c3}
+                  c4={c4}
+                  c5={c5}
+                  c6={c6}
+                  p7={p7}
+                  p8={p8}
+                  f9={f9}               
+                  
+                />
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
               <OrdersOverview />

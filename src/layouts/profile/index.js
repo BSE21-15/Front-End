@@ -46,10 +46,13 @@ import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
 
+import { useState, useEffect } from "react";
+
 function Overview() {
+  const [finalSubject, setFinalSubject] = useState("Mathematics");
   return (
     <DashboardLayout>
-      <DashboardNavbar />
+      <DashboardNavbar setFinalSubject={setFinalSubject}/>
       <MDBox mb={2} />
       <Header>
         <MDBox mt={5} mb={3}>

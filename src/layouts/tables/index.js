@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 // @mui material components
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
@@ -19,10 +21,11 @@ import projectsTableData from "layouts/tables/data/projectsTableData";
 function Tables() {
   const { columns, rows } = authorsTableData();
   const { columns: pColumns, rows: pRows } = projectsTableData();
+  const [finalSubject, setFinalSubject] = useState("Mathematics");
 
   return (
     <DashboardLayout>
-      <DashboardNavbar />
+      <DashboardNavbar setFinalSubject={setFinalSubject}/>
       <MDBox pt={6} pb={3}>
         <Grid container spacing={6}>
           <Grid item xs={12}>

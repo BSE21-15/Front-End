@@ -15,7 +15,9 @@
   "rules": {
     "prettier/prettier":0,
     "no-unused-vars": "off",
+    "react/prop-types": "off",
     "prefer-destructuring": "off",
+    "no-useless-return": "off",
     "array-callback-return": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
