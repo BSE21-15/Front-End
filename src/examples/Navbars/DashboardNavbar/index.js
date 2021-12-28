@@ -55,7 +55,7 @@ import {
   setOpenConfigurator,
 } from "context";
 
-function DashboardNavbar({ absolute, light, isMini, setFinalSubject  }) {
+function DashboardNavbar({ absolute, light, isMini, setFinalSubject }) {
   const [navbarType, setNavbarType] = useState();
   const [subject, setSubject] = useState('Mathematics');  
   const [controller, dispatch] = useMaterialUIController();
@@ -67,7 +67,7 @@ function DashboardNavbar({ absolute, light, isMini, setFinalSubject  }) {
   setFinalSubject(subject);
 
   const handleChange = (event) => {
-    setSubject(event.target.value);    
+    setSubject(event.target.value);  
     
   };
 
@@ -167,8 +167,8 @@ function DashboardNavbar({ absolute, light, isMini, setFinalSubject  }) {
                   <MenuItem value="History.csv">History</MenuItem>
                   <MenuItem value="Commerce.csv">Commerce</MenuItem>
                   <MenuItem value="CRE.csv">CRE</MenuItem>
-                  <MenuItem value="Agriculture.csv">Agriculture</MenuItem>                  
-                  <MenuItem value="Biology-testone.csv">Biology-testone.csv</MenuItem>
+                  <MenuItem value="Agriculture.csv">Agriculture</MenuItem>                 
+                  
                   
                 </Select>
               </FormControl>

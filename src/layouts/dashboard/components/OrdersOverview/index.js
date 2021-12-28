@@ -24,53 +24,66 @@ function OrdersOverview() {
     <Card sx={{ height: "100%" }}>
       <MDBox pt={3} px={3}>
         <MDTypography variant="h6" fontWeight="medium">
-          Grades overview
-        </MDTypography>
-        <MDBox mt={0} mb={2}>
-          <MDTypography variant="button" color="text" fontWeight="regular">
-            <MDTypography display="inline" variant="body2" verticalAlign="middle">
-              <Icon sx={{ color: ({ palette: { success } }) => success.main }}>arrow_upward</Icon>
-            </MDTypography>
-            &nbsp;
-            <MDTypography variant="button" color="text" fontWeight="medium">
-              24%
-            </MDTypography>{" "}
-            improvements this month
-          </MDTypography>
-        </MDBox>
+          Grading overview
+        </MDTypography>        
       </MDBox>
       <MDBox p={2}>
         <TimelineItem
+          sx={{ marginBottom: "0" }}
           color="success"
           icon="notifications"
           title="D1"
-          dateTime="22 DEC 7:20 PM"
+          dateTime="95-100"          
         />
         <TimelineItem
           color="error"
           icon="inventory_2"
           title="D2"
-          dateTime="21 DEC 11 PM"
+          dateTime="90-94"
         />
         <TimelineItem
           color="info"
           icon="payment"
-          title="C3-C6"
-          dateTime="21 DEC 9:34 PM"
+          title="C3"
+          dateTime="80-89"
         />
         <TimelineItem
           color="warning"
           icon="payment"
-          title="P7-P8"
-          dateTime="20 DEC 2:20 AM"
+          title="C4"
+          dateTime="70-79"
         />
         <TimelineItem
           color="primary"
           icon="vpn_key"
-          title="F9"
-          dateTime="18 DEC 4:54 AM"
-          lastItem
+          title="C5"
+          dateTime="66-69"          
         />
+        <TimelineItem
+          color="success"
+          icon="notifications"
+          title="C6"
+          dateTime="60-65"
+        />
+        <TimelineItem
+          color="error"
+          icon="inventory_2"
+          title="P7"
+          dateTime="56-59"
+        />
+        <TimelineItem
+          color="info"
+          icon="payment"
+          title="P8"
+          dateTime="50-55"
+        />
+        <TimelineItem
+          color="warning"
+          icon="payment"
+          title="F9"
+          dateTime="0-49"
+          lastItem
+        />        
       </MDBox>
     </Card>
   );

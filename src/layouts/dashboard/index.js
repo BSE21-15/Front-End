@@ -37,6 +37,10 @@ import OrdersOverview from "layouts/dashboard/components/OrdersOverview";
 function Dashboard() {
   
   const [finalSubject, setFinalSubject] = useState("Mathematics");
+  const [fetchedPredictions, setFetchedPredictions] = useState([]);
+ 
+
+  // Array of marks to use in plotting graphs
   const [marks, setMarks] = useState([]);
 
   const [distinctions, setDistinctions] = useState(0);
@@ -54,21 +58,20 @@ function Dashboard() {
   const [p8, setP8] = useState(0);
   const [f9, setF9] = useState(0);
 
-
-
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
         "https://markspredictorapi.herokuapp.com/prediction/"
       );
       const jsondata = await response.json()
-      const newArray = [...jsondata];
-      console.log(newArray)
-      console.log(finalSubject)
+      setFetchedPredictions([...jsondata]);
+      console.log(fetchedPredictions) // This is an array of objects
+      console.log(finalSubject)      
+      
 
       const marksPerGrade = [0, 0, 0, 0, 0, 0, 0, 0, 0];
           
-      newArray.map((item) => {
+      fetchedPredictions.map((item) => {
         const currentSubject = item.subject;
         const prediction = item.prediction;
       
@@ -121,7 +124,7 @@ function Dashboard() {
 
   return (
     <DashboardLayout>
-      <DashboardNavbar setFinalSubject={setFinalSubject}/>
+      <DashboardNavbar setFinalSubject={setFinalSubject} />
       <MDBox py={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6} lg={3}>

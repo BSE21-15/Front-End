@@ -50,9 +50,10 @@ import { useState, useEffect } from "react";
 
 function Overview() {
   const [finalSubject, setFinalSubject] = useState("Mathematics");
+
   return (
     <DashboardLayout>
-      <DashboardNavbar setFinalSubject={setFinalSubject}/>
+      <DashboardNavbar setFinalSubject={setFinalSubject} />
       <MDBox mb={2} />
       <Header>
         <MDBox mt={5} mb={3}>
