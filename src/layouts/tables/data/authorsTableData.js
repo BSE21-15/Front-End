@@ -33,24 +33,7 @@ export default function data() {
     ],
 
     rowsArray: [
-      {
-        author: <Author name="Anorld" />,
-        function: <Job title="85" />,
-        status: (
-          <MDBox ml={-1}>
-            <MDBadge badgeContent="D1" color="success" variant="gradient" size="sm" />
-          </MDBox>
-        ),        
-      },
-      {
-        author: <Author name="Anorld" />,
-        function: <Job title="85" />,
-        status: (
-          <MDBox ml={-1}>
-            <MDBadge badgeContent="D1" color="success" variant="gradient" size="sm" />
-          </MDBox>
-        ),        
-      },
+      
     ],
   };
 }

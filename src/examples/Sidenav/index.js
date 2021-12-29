@@ -219,23 +219,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
         <MDButton variant="gradient" color="info" onClick={handleFileUpload} fullWidth>
                 upload file
         </MDButton>
-      </MDBox>
-
-
-
-      <MDBox p={2} mt="auto">
-        <MDButton
-          component="a"
-          href="https://www.creative-tim.com/product/material-dashboard-pro-react"
-          target="_blank"
-          rel="noreferrer"
-          variant="gradient"
-          color={sidenavColor}
-          fullWidth
-        >
-          Print Report
-        </MDButton>
-      </MDBox>
+      </MDBox>      
     </SidenavRoot>
   );
 }
