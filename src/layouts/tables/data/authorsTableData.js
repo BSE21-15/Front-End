@@ -29,6 +29,7 @@ export default function data() {
       { Header: "student", accessor: "author", width: "45%", align: "left" },
       { Header: "Final-mark", accessor: "function", align: "left" },
       { Header: "grade", accessor: "status", align: "center" },
+      { Header: "date generated", accessor: "employed", align: "center" },
       
     ],
 

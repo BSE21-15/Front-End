@@ -27,7 +27,7 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
 function Notifications() {
 
-  const [finalSubject, setFinalSubject] = useState("Mathematics");
+  const [finalSubject, setFinalSubject] = useState('');
   const [successSB, setSuccessSB] = useState(false);
   const [infoSB, setInfoSB] = useState(false);
   const [warningSB, setWarningSB] = useState(false);

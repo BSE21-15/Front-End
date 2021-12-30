@@ -49,7 +49,7 @@ import team4 from "assets/images/team-4.jpg";
 import { useState, useEffect } from "react";
 
 function Overview() {
-  const [finalSubject, setFinalSubject] = useState("Mathematics");
+  const [finalSubject, setFinalSubject] = useState('');
 
   return (
     <DashboardLayout>

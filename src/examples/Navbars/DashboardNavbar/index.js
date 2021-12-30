@@ -57,7 +57,7 @@ import {
 
 function DashboardNavbar({ absolute, light, isMini, setFinalSubject }) {
   const [navbarType, setNavbarType] = useState();
-  const [subject, setSubject] = useState('Mathematics');  
+  const [subject, setSubject] = useState('');  
   const [controller, dispatch] = useMaterialUIController();
   const { miniSidenav, transparentNavbar, fixedNavbar, openConfigurator, darkMode } = controller;
   const [openMenu, setOpenMenu] = useState(false);
@@ -201,19 +201,7 @@ function DashboardNavbar({ absolute, light, isMini, setFinalSubject }) {
                 onClick={handleConfiguratorOpen}
               >
                 <Icon sx={iconsStyle}>settings</Icon>
-              </IconButton>
-              <IconButton
-                size="small"
-                disableRipple
-                color="inherit"
-                sx={navbarIconButton}
-                aria-controls="notification-menu"
-                aria-haspopup="true"
-                variant="contained"
-                onClick={handleOpenMenu}
-              >
-                <Icon sx={iconsStyle}>notifications</Icon>
-              </IconButton>
+              </IconButton>              
               {renderMenu()}
             </MDBox>
           </MDBox>

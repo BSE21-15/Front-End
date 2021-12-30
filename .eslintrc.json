@@ -17,6 +17,7 @@
     "no-unused-vars": "off",
     "react/prop-types": "off",
     "prefer-destructuring": "off",
+    "no-empty": "off",
     "no-useless-return": "off",
     "array-callback-return": "off",
     "react/react-in-jsx-scope": "off",

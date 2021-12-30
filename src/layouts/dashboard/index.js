@@ -178,7 +178,7 @@ function Dashboard() {
               <MDBox mb={6}>
                 <ReportsBarChart
                   color="info"
-                  title="individual Grade Projections"
+                  title=" Bar chart visualizing projections"
                   description="Bar chart showing number of students in each grade"
                   chart={{
                     labels: ["D1", "D2", "C3", "C4", "C5", "C6", "P7","P8","F9"],
@@ -191,7 +191,7 @@ function Dashboard() {
               <MDBox mb={6}>
                 <ReportsLineChart
                   color="success"
-                  title="Monthly Grade Projections"
+                  title="Line chart visualizing projections"
                   description="Line chart showing number of students in each grade"
                   chart={{
                     labels: ["D1", "D2", "C3", "C4", "C5", "C6", "P7","P8","F9"],

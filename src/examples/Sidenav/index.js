@@ -88,6 +88,8 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
   })
   .then((response) => {
     console.log(response);
+    if(alert('File Uploaded successfully!')){}
+    else    window.location.reload();
   })
   .catch((error) => {
     console.log(error.response);
@@ -210,12 +212,12 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
         }
       />
       <List>{renderRoutes}</List>
-      <MDBox p={2} mt="auto">
+      <MDBox p={2} mt="auto" sx={{paddingBottom: '0px'}}>
         <MDButton variant="gradient" color="info" onChange={handleFile} fullWidth>
                 <MDInput type="file" label="Select File" variant="standard" fullWidth />
         </MDButton>
       </MDBox>
-      <MDBox p={2} mt="auto">
+      <MDBox p={2} mt="auto" sx={{paddingTop: '0px'}}>
         <MDButton variant="gradient" color="info" onClick={handleFileUpload} fullWidth>
                 upload file
         </MDButton>

@@ -60,6 +60,7 @@ function Tables() {
         const currentSubject = item.subject;
         const prediction = item.prediction;
         const student = item.student;
+        const date = item.dateGenerated;
       
         if (currentSubject === finalSubject && (prediction >= 95)) {
           rowsArray.push({
@@ -69,6 +70,11 @@ function Tables() {
                   <MDBox ml={-1}>
                     <MDBadge badgeContent="D1" color="success" variant="gradient" size="sm" />
                   </MDBox>
+                ),
+                employed: (
+                  <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+                    {date}
+                  </MDTypography>
                 ),        
           })          
         } else if (currentSubject === finalSubject && (prediction >= 90)) {
@@ -79,6 +85,11 @@ function Tables() {
                   <MDBox ml={-1}>
                     <MDBadge badgeContent="D2" color="success" variant="gradient" size="sm" />
                   </MDBox>
+                ),
+                employed: (
+                  <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+                    {date}
+                  </MDTypography>
                 ),        
           })
           
@@ -90,7 +101,12 @@ function Tables() {
                   <MDBox ml={-1}>
                     <MDBadge badgeContent="C3" color="info" variant="gradient" size="sm" />
                   </MDBox>
-                ),        
+                ),    
+                employed: (
+                  <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+                    {date}
+                  </MDTypography>
+                ),    
           })
           
         } else if (currentSubject === finalSubject && (prediction >= 70)) {
@@ -101,7 +117,12 @@ function Tables() {
                   <MDBox ml={-1}>
                     <MDBadge badgeContent="C4" color="info" variant="gradient" size="sm" />
                   </MDBox>
-                ),        
+                ),    
+                employed: (
+                  <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+                    {date}
+                  </MDTypography>
+                ),    
           })
           
         } else if (currentSubject === finalSubject && (prediction >= 66)) {
@@ -113,6 +134,11 @@ function Tables() {
                     <MDBadge badgeContent="C5" color="info" variant="gradient" size="sm" />
                   </MDBox>
                 ),        
+                employed: (
+                  <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+                    {date}
+                  </MDTypography>
+                ),
           })
           
         } else if (currentSubject === finalSubject && (prediction >= 60)) {
@@ -123,7 +149,12 @@ function Tables() {
                   <MDBox ml={-1}>
                     <MDBadge badgeContent="C6" color="warning" variant="gradient" size="sm" />
                   </MDBox>
-                ),        
+                ),  
+                employed: (
+                  <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+                    {date}
+                  </MDTypography>
+                ),      
           })
           
         } else if (currentSubject === finalSubject && (prediction >= 56)) {
@@ -134,7 +165,12 @@ function Tables() {
                   <MDBox ml={-1}>
                     <MDBadge badgeContent="P7" color="warning" variant="gradient" size="sm" />
                   </MDBox>
-                ),        
+                ),    
+                employed: (
+                  <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+                    {date}
+                  </MDTypography>
+                ),    
           })
           
         } else if (currentSubject === finalSubject && (prediction >= 50)) {
@@ -146,6 +182,11 @@ function Tables() {
                     <MDBadge badgeContent="P8" color="error" variant="gradient" size="sm" />
                   </MDBox>
                 ),        
+                employed: (
+                  <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+                    {date}
+                  </MDTypography>
+                ),
           })
           
         } else if (currentSubject === finalSubject && (prediction >= 0)) {
@@ -156,6 +197,11 @@ function Tables() {
                   <MDBox ml={-1}>
                     <MDBadge badgeContent="F9" color="error" variant="gradient" size="sm" />
                   </MDBox>
+                ),
+                employed: (
+                  <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+                    {date}
+                  </MDTypography>
                 ),        
           })
           
