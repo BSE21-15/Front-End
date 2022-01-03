@@ -58,6 +58,8 @@ function Dashboard() {
   const [p8, setP8] = useState(0);
   const [f9, setF9] = useState(0);
 
+  const todayDate = new Date().toISOString().slice(0, 10);
+
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
@@ -70,35 +72,49 @@ function Dashboard() {
       
 
       const marksPerGrade = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-          
+      let counter = 0;
+      
       fetchedPredictions.map((item) => {
         const currentSubject = item.subject;
         const prediction = item.prediction;
+        const predictionDate = item.dateGenerated;
+        
       
-        if (currentSubject === finalSubject && (prediction >= 90)) {
+        if (currentSubject === finalSubject && (prediction >= 90) && predictionDate===todayDate && counter<395) {
           marksPerGrade[0] += 1;
-        } else if (currentSubject === finalSubject && (prediction >= 80)) {
+          counter += 1;
+        } else if (currentSubject === finalSubject && (prediction >= 80) && predictionDate===todayDate && counter<395) {
           marksPerGrade[1] += 1;
-        } else if (currentSubject === finalSubject && (prediction >= 75)) {
+          counter += 1;
+        } else if (currentSubject === finalSubject && (prediction >= 75) && predictionDate===todayDate && counter<395) {
           marksPerGrade[2] += 1;
-        } else if (currentSubject === finalSubject && (prediction >= 70)) {
+          counter += 1;
+        } else if (currentSubject === finalSubject && (prediction >= 70) && predictionDate===todayDate && counter<395) {
           marksPerGrade[3] += 1;
-        } else if (currentSubject === finalSubject && (prediction >= 65)) {
+          counter += 1;
+        } else if (currentSubject === finalSubject && (prediction >= 65) && predictionDate===todayDate && counter<395) {
           marksPerGrade[4] += 1;
-        } else if (currentSubject === finalSubject && (prediction >= 60)) {
+          counter += 1;
+        } else if (currentSubject === finalSubject && (prediction >= 60) && predictionDate===todayDate && counter<395) {
           marksPerGrade[5] += 1;
-        } else if (currentSubject === finalSubject && (prediction >= 40)) {
+          counter += 1;
+        } else if (currentSubject === finalSubject && (prediction >= 40) && predictionDate===todayDate && counter<395) {
           marksPerGrade[6] += 1;
-        } else if (currentSubject === finalSubject && (prediction >= 20)) {
+          counter += 1;
+        } else if (currentSubject === finalSubject && (prediction >= 20) && predictionDate===todayDate && counter<395) {
           marksPerGrade[7] += 1;
-        }else if (currentSubject === finalSubject && (prediction >= 0)) {
+          counter += 1;
+        }else if (currentSubject === finalSubject && (prediction >= 0) && predictionDate===todayDate && counter<395) {
           marksPerGrade[8] += 1;
+          counter += 1;
         } else {
           return
         }
       });
       console.log(marksPerGrade);
       setMarks(marksPerGrade);
+      console.log(counter);
+      
 
       // Setting data for the statistics cards
       setDistinctions(marksPerGrade[0]+marksPerGrade[1]); 

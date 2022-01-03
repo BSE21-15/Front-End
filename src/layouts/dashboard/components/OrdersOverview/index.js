@@ -31,13 +31,13 @@ function OrdersOverview() {
         <TimelineItem
           sx={{ marginBottom: "0" }}
           color="success"
-          icon="notifications"
+          icon="payment"
           title="D1"
           dateTime="95-100"          
         />
         <TimelineItem
-          color="error"
-          icon="inventory_2"
+          color="success"
+          icon="payment"
           title="D2"
           dateTime="90-94"
         />
@@ -48,37 +48,37 @@ function OrdersOverview() {
           dateTime="80-89"
         />
         <TimelineItem
-          color="warning"
+          color="info"
           icon="payment"
           title="C4"
           dateTime="70-79"
         />
         <TimelineItem
-          color="primary"
-          icon="vpn_key"
+          color="info"
+          icon="payment"
           title="C5"
           dateTime="66-69"          
         />
         <TimelineItem
-          color="success"
-          icon="notifications"
+          color="warning"
+          icon="payment"
           title="C6"
           dateTime="60-65"
         />
         <TimelineItem
-          color="error"
-          icon="inventory_2"
+          color="warning"
+          icon="payment"
           title="P7"
           dateTime="56-59"
         />
         <TimelineItem
-          color="info"
+          color="error"
           icon="payment"
           title="P8"
           dateTime="50-55"
         />
         <TimelineItem
-          color="warning"
+          color="error"
           icon="payment"
           title="F9"
           dateTime="0-49"
