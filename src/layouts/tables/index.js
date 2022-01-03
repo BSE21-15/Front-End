@@ -47,6 +47,7 @@ function Tables() {
   console.log(tablesData);
   console.log(finalSubject);
   console.log(rows);
+  const todayDate = new Date().toISOString().slice(0, 10);
 
   useEffect(() => {
     async function fetchData() {
@@ -55,6 +56,7 @@ function Tables() {
       );
       const jsondata = await response.json()
       setTablesData([...jsondata]);
+      let counter = 0;
 
       tablesData.map((item) => {
         const currentSubject = item.subject;
@@ -62,7 +64,7 @@ function Tables() {
         const student = item.student;
         const date = item.dateGenerated;
       
-        if (currentSubject === finalSubject && (prediction >= 95)) {
+        if (currentSubject === finalSubject && (prediction >= 95) && date===todayDate && counter<395) {
           rowsArray.push({
                 author: <Author name={student} />,
                 function: <Job title={prediction} />,
@@ -76,8 +78,9 @@ function Tables() {
                     {date}
                   </MDTypography>
                 ),        
-          })          
-        } else if (currentSubject === finalSubject && (prediction >= 90)) {
+          })
+          counter += 1;
+        } else if (currentSubject === finalSubject && (prediction >= 90) && date===todayDate && counter<395) {
           rowsArray.push({
                 author: <Author name={student} />,
                 function: <Job title={prediction} />,
@@ -92,8 +95,8 @@ function Tables() {
                   </MDTypography>
                 ),        
           })
-          
-        } else if (currentSubject === finalSubject && (prediction >= 80)) {
+          counter += 1;          
+        } else if (currentSubject === finalSubject && (prediction >= 80) && date===todayDate && counter<395) {
           rowsArray.push({
                 author: <Author name={student} />,
                 function: <Job title={prediction} />,
@@ -108,8 +111,8 @@ function Tables() {
                   </MDTypography>
                 ),    
           })
-          
-        } else if (currentSubject === finalSubject && (prediction >= 70)) {
+          counter += 1;
+        } else if (currentSubject === finalSubject && (prediction >= 70) && date===todayDate && counter<395) {
           rowsArray.push({
                 author: <Author name={student} />,
                 function: <Job title={prediction} />,
@@ -124,8 +127,8 @@ function Tables() {
                   </MDTypography>
                 ),    
           })
-          
-        } else if (currentSubject === finalSubject && (prediction >= 66)) {
+          counter += 1;
+        } else if (currentSubject === finalSubject && (prediction >= 66) && date===todayDate && counter<395) {
           rowsArray.push({
                 author: <Author name={student} />,
                 function: <Job title={prediction} />,
@@ -140,8 +143,8 @@ function Tables() {
                   </MDTypography>
                 ),
           })
-          
-        } else if (currentSubject === finalSubject && (prediction >= 60)) {
+          counter += 1;
+        } else if (currentSubject === finalSubject && (prediction >= 60) && date===todayDate && counter<395) {
           rowsArray.push({
                 author: <Author name={student} />,
                 function: <Job title={prediction} />,
@@ -156,8 +159,8 @@ function Tables() {
                   </MDTypography>
                 ),      
           })
-          
-        } else if (currentSubject === finalSubject && (prediction >= 56)) {
+          counter += 1;
+        } else if (currentSubject === finalSubject && (prediction >= 56) && date===todayDate && counter<395) {
           rowsArray.push({
                 author: <Author name={student} />,
                 function: <Job title={prediction} />,
@@ -172,8 +175,8 @@ function Tables() {
                   </MDTypography>
                 ),    
           })
-          
-        } else if (currentSubject === finalSubject && (prediction >= 50)) {
+          counter += 1;
+        } else if (currentSubject === finalSubject && (prediction >= 50) && date===todayDate && counter<395) {
           rowsArray.push({
                 author: <Author name={student} />,
                 function: <Job title={prediction} />,
@@ -188,8 +191,8 @@ function Tables() {
                   </MDTypography>
                 ),
           })
-          
-        } else if (currentSubject === finalSubject && (prediction >= 0)) {
+          counter += 1;
+        } else if (currentSubject === finalSubject && (prediction >= 0) && date===todayDate && counter<395) {
           rowsArray.push({
                 author: <Author name={student} />,
                 function: <Job title={prediction} />,
@@ -204,7 +207,7 @@ function Tables() {
                   </MDTypography>
                 ),        
           })
-          
+          counter += 1;
         } else {
           return
         }
