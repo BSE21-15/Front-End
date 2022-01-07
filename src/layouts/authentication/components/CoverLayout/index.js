@@ -31,7 +31,7 @@ function CoverLayout({ coverHeight, image, children }) {
       <DefaultNavbar
         action={{
           type: "external",
-          route: "https://creative-tim.com/product/material-dashboard-react",
+          route: "https://intellias.com/benefits-of-machine-learning-in-education/",
           label: "join now",
         }}
         transparent
